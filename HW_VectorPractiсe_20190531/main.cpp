@@ -36,6 +36,23 @@ void main() {
 
 	//	2.	Разделить каждое число на сумму 1 - ого отрицательного числа и 5 - ого(по порядку) числа.
 
+	/*int firstNegNum;
+	for (size_t i = 0; i < size(v); i++){
+		if (v[i] < 0) {
+			firstNegNum = i;
+			break;
+		}
+	}
+	cout << "firstNegNum = " << v[firstNegNum] << endl;
+	int sum15 = 0;
+	if (firstNegNum <= size(v) / 2)
+		sum15 = v[firstNegNum] + v[firstNegNum + 5];
+	else
+		sum15 = v[firstNegNum];
+	cout <<"sum15 = "<< sum15 << endl;
+	for (auto& i : v)
+		i /= sum15;*/
+
 	//	3.	Разделить все нечетные числа на среднее арифметическое
 
 	/*int sum = 0;
@@ -129,7 +146,7 @@ void main() {
 	});*/
 	//	5.	Заменить каждое четное число разностью максимума и минимума
 
-	/*it = (max_element(begin(v), end(v)));
+	it = (max_element(begin(v), end(v)));
 	cout << "Max elem -> " << *it << endl;
 	int t = *it;
 	it = (min_element(begin(v), end(v)));
@@ -141,7 +158,7 @@ void main() {
 		//cout << i << "\t";
 		if (i % 2 == 0)
 			return (i = t);
-	});*/
+	});
 
 	copy(begin(v), end(v), os);
 	system("pause");
