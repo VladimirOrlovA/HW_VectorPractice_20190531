@@ -20,12 +20,12 @@ void main() {
 
 	/*for (it = begin(v); it != end(v); it++)
 		cout << *it << "\t";*/
-		
+
 	for (auto i : v)
 		cout << i << "\t";
 
 	//	1.	ѕрибавить к каждому числу корень квадратный из произведени€ первого и последнего числа, хран€щегос€ в векторе.
-	
+
 	/*int s = sqrt(abs(*(begin(v)) * *(end(v) - 1)));
 	cout << s << endl;
 
@@ -33,10 +33,8 @@ void main() {
 		return i+=s;
 	});*/
 
-	
-	//	2.	–азделить каждое число на сумму 1 - ого отрицательного числа и 5 - ого(по пор€дку) числа.
 
-	
+	//	2.	–азделить каждое число на сумму 1 - ого отрицательного числа и 5 - ого(по пор€дку) числа.
 
 	//	3.	–азделить все нечетные числа на среднее арифметическое
 
@@ -47,13 +45,21 @@ void main() {
 	cout << sum << endl;
 	int averSum=(abs(sum)/v.size());
 	cout << averSum << endl;
-	
+
 	for_each(begin(v), end(v), [&averSum] (int &i){
 		if (i % 2 != 0)
 			return (i = i/averSum);
 	});*/
 
 	//	4.	¬ычесть из каждого числа сумму всех чисел
+
+	/*int sum_of_elems = 0;
+	for (auto i : v)
+		sum_of_elems += i;
+	cout << "sum_of_elems v = " << sum_of_elems << endl;
+	for (auto& i : v)
+		i = i - sum_of_elems;*/
+
 	//	5.	”множить каждое 3 - ее число на сумму 2 - х предыдущих чисел
 
 	/*int cnt = 1;
@@ -81,13 +87,62 @@ void main() {
 	});*/
 
 	//	2.	—ложить каждое число с последним отрицательным числом
+
+	/*int lastNegNum;
+
+	for (size_t i = (size(v)-1); i!=0; i--)
+	{
+		if (v[i] < 0) {
+			lastNegNum = v[i];
+			break;
+		}
+	}
+	cout << "lastNegNum = " << lastNegNum << endl;
+
+	for_each(begin(v), end(v), [&lastNegNum](int &i) {
+		return (i += lastNegNum);
+	});*/
+
 	//	3.	«аменить все положительные числа максимальным числом
+
+	/*
+	it=(max_element(begin(v), end(v)));
+	cout <<"Max elem -> "<< *it<<endl;
+	for_each(begin(v), (end(v) - 1), [&it](int &i) {
+		if (i > 0)
+			return (i = *it);
+	});
+	*/
+
 	//	4.	«аменить каждое второе отрицательное число половиной минимума
+
+	/*int cnt = 1;
+	it = (max_element(begin(v), end(v)));
+	cout << "Max elem -> " << *it << endl;
+	for_each(begin(v), (end(v) - 1), [&it, &cnt](int &i) {
+		if (i < 0 && cnt == 2) {
+			cnt = 1;
+			return (i = (*it/2));
+		}
+		cnt++;
+
+	});*/
 	//	5.	«аменить каждое четное число разностью максимума и минимума
 
+	/*it = (max_element(begin(v), end(v)));
+	cout << "Max elem -> " << *it << endl;
+	int t = *it;
+	it = (min_element(begin(v), end(v)));
+	cout << "Min elem -> " << *it << endl;
+	t -= *it;
+	cout << "\n-----------\n" << t << "\n-----------\n";
+
+	for_each(begin(v), end(v), [&t](auto &i) {
+		//cout << i << "\t";
+		if (i % 2 == 0)
+			return (i = t);
+	});*/
+
 	copy(begin(v), end(v), os);
-
-
-
 	system("pause");
 }
