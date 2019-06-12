@@ -40,25 +40,46 @@ void main() {
 
 	//	3.	Разделить все нечетные числа на среднее арифметическое
 
-	int sum = 0;
-	for_each(begin(v), (end(v) - 1), [&sum](int &i) {
+	/*int sum = 0;
+	for_each(begin(v), end(v), [&sum](int &i) {
 		sum += i;
 	});
 	cout << sum << endl;
 	int averSum=(abs(sum)/v.size());
 	cout << averSum << endl;
 	
-	for_each(begin(v), (end(v)-1), [&averSum] (int &i){
+	for_each(begin(v), end(v), [&averSum] (int &i){
 		if (i % 2 != 0)
-			return (i /= averSum);
-	});
+			return (i = i/averSum);
+	});*/
 
 	//	4.	Вычесть из каждого числа сумму всех чисел
 	//	5.	Умножить каждое 3 - ее число на сумму 2 - х предыдущих чисел
 
+	/*int cnt = 1;
+	for (it = begin(v); it != end(v); it++, cnt++) {
+		if (cnt == 3) {
+			cnt = 1;
+			*it *= (*(it - 2) + *(it - 1));
+			it++;
+		}
+	}*/
 
 	//	Создать список из 10 элементов и заполнить его случайными числами в диапазоне от - 50 до 50.
 	//	1.	Заменить все нули средним арифметическим
+
+	/*int sum = 0;
+	for_each(begin(v), end(v), [&sum](int &i) {
+		sum += i;
+	});
+
+	int averSum = (abs(sum) / v.size());
+
+	for_each(begin(v), (end(v) - 1), [&averSum](int &i) {
+		if (i == 0)
+			return (i = averSum);
+	});*/
+
 	//	2.	Сложить каждое число с последним отрицательным числом
 	//	3.	Заменить все положительные числа максимальным числом
 	//	4.	Заменить каждое второе отрицательное число половиной минимума
